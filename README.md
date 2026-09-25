@@ -1,58 +1,164 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Personal Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Name: Eunice Jana Pailangco
+Section:BSIT SEC10 2nd Year
 
-## About Laravel
+A simple Laravel-based Personal Task Manager that allows users to create, view, update, and delete tasks.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Project Description
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The Personal Task Manager is a mini CRUD web application developed using Laravel.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The system allows users to manage personal tasks and track their progress through different task statuses.
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Add a new task
+* View all tasks
+* Edit an existing task
+* Delete a task
+* Update task status
+* Set a due date
+* Validate required task information
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Task Information
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Each task contains the following information:
 
-## Agentic Development
+* **Task Name** - Name of the task
+* **Description** - Details about the task
+* **Status** - Pending or Completed
+* **Due Date** - Target date for completing the task
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Technologies Used
 
-```bash
-composer require laravel/boost --dev
+* Laravel
+* PHP
+* SQLite
+* Blade Templates
+* HTML
+* CSS
+* Git
+* GitHub
+* GitHub Codespaces
 
-php artisan boost:install
+## Laravel Structure
+
+The project follows the basic Laravel flow:
+
+```text
+User
+  ↓
+Route
+  ↓
+Controller
+  ↓
+Model
+  ↓
+Database
+  ↓
+Blade View
+  ↓
+Web Page
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### Main Project Files
 
-## Contributing
+```text
+app/
+├── Http/
+│   └── Controllers/
+│       └── TaskController.php
+│
+└── Models/
+    └── Task.php
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+database/
+└── migrations/
+    └── create_tasks_table.php
 
-## Code of Conduct
+resources/
+└── views/
+    └── tasks/
+        ├── index.blade.php
+        ├── create.blade.php
+        └── edit.blade.php
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+routes/
+└── web.php
+```
 
-## Security Vulnerabilities
+## Database
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The application uses a `tasks` table with the following fields:
 
-## License
+| Field       | Description                        |
+| ----------- | ---------------------------------- |
+| id          | Unique task ID                     |
+| task_name   | Name of the task                   |
+| description | Task description                   |
+| status      | Pending or Completed               |
+| due_date    | Task due date                      |
+| created_at  | Date and time the task was created |
+| updated_at  | Date and time the task was updated |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## CRUD Operations
+
+The application implements the four basic CRUD operations:
+
+* **Create** - Add a new task
+* **Read** - Display existing tasks
+* **Update** - Edit task information and status
+* **Delete** - Remove a task
+
+## Validation
+
+The application validates task information before saving.
+
+The Task Name is required, while the description and due date are optional.
+
+The status must be either:
+
+* Pending
+* Completed
+
+## Running the Project
+
+Install the project dependencies:
+
+```bash
+composer install
+```
+
+Run the database migrations:
+
+```bash
+php artisan migrate
+```
+
+Start the Laravel development server:
+
+```bash
+php artisan serve
+```
+
+Then open the application in a browser.
+
+## Project Testing
+
+The following features were tested:
+
+* Add Task
+* View Tasks
+* Edit Task
+* Update Task
+* Update Status
+* Delete Task
+* Required-field validation
+* Due Date
+* Pending and Completed status
+
+## Project Status
+
+The Personal Task Manager CRUD functionality has been implemented and tested.
+
